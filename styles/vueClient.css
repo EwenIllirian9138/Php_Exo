@@ -1,0 +1,311 @@
+* {
+	font-family: 'Basic';
+}
+body {
+	background-color: lightgrey;
+}
+#machine {
+	background-image: url('../assets/vue1.png');
+	height: 1024px;
+	width: 768px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#vue2 {
+	background-image: url('../assets/vue2.png');
+	height: 1024px;
+	width: 768px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Afficheur */
+#affichageChoix {
+	font-size: 30px;
+	position: center;
+}
+#afficheur {
+	height: 256px;
+}
+#gauche, #droite, #affichageChoix {
+	float: left;
+}
+#affichageChoix {
+	height: 192px; 
+	width: 568px;
+	color: white;
+	margin-top: 30px;
+	padding: 20px;
+}
+#gauche, #droite {
+	width: 100px;
+	height: 100%;
+}
+#btnGauche, #btnDroite{
+	position: relative;
+	top: 91px;
+	left: 13px;
+}
+#chargement {
+	width: 0px;
+	position: absolute;
+	background-color: red;
+	height: 2px;
+	top: 253px;
+}
+.boissons {
+	font-size: 2em;
+}
+/* Fin Afficheur */
+
+#monnayeur, #zoneSucre, #btnValider {
+ height: 365px;
+ float: left;
+}
+
+/* Monnayeur */
+#monnayeur {
+	width: 40%;
+	padding-top: 13px;
+	padding-bottom: 13px;
+	padding-right: 13px;
+}
+#btnMoney {
+	padding-top: 3px;
+	text-align: center;
+	border-radius: 60px 60px 0 0 ;
+	height: 73px;
+	width: 35%;
+	float: left;
+}
+#btnMoney img {
+	display: inline;
+}
+#fente {
+	float: left;
+	height: 73px;
+	width: 30%;
+	padding-top: 23px;
+}
+#fente img{
+	width: 100%;
+}
+#afficheurMonnaie {
+	float: left;
+	margin-top: 13px;
+	width: 100%;
+	height: 50px;
+	margin-bottom: 40px;
+}
+#afficheurMonnaie > img {
+	width: 70%;
+	height: 100%;
+}
+#monnaieUser{
+	position: absolute;
+	text-align: center;
+	margin: 0;
+	padding-top: 3px;
+	font-size: 2em;
+	color: red;
+	width: 154px;
+	text-shadow: 0px 0px 10px red;
+}
+#btnResetMonnaie {
+	float: left;
+	width: 100%;
+	text-align: center;
+	margin-top: 10px;
+	height: 73px;
+}
+#retourMonnaie {
+	float: left;
+	width: 100%;
+	text-align: center;
+	height: 50%;
+	margin-top: 31px;
+}
+#retourMonnaie img {
+	display: inline;
+	width: 50%;
+}
+#moneyForm {
+	z-index: 100;
+	border-radius: 0 100px 100px 100px;
+	margin-left: auto;
+	height: 190px;
+	width: 768px;
+	margin-top: 342px;
+	background-color: rgba(0, 0, 0, 0.7);
+	padding: 20px;
+	font-size: 20px;
+	text-align: center;
+	color: white;
+	position: absolute;
+}
+.backgroundGrey {
+	background-color: rgba(0, 0, 0, 0.7);
+}
+.hidden {
+	display: none;
+}
+.coins {
+	float: left;
+	margin-top: 19px;
+	width: 15%;
+	border-radius: 100%;
+	margin-left: 10px;
+	display: inline;
+}
+/* Fin Monnayeur */
+
+#btnValider {
+	width: 20%;
+}
+#btnValider img {
+	width: 100%;
+}
+
+/* Zone Sucre */
+#zoneSucre {
+	margin-left: 27%;
+	padding: 13px;
+}
+#btnMoins, #btnPlus {
+	height: 20%;
+}
+#ledSucres {
+	padding-top: 20px;
+	padding-left: 10px;
+	height: 60%;
+}
+/* Fin Zone Sucre */
+
+/* Gobelet */
+#zoneGob, #remplissage {
+	width: 70%;
+	height: 403px;
+	float: left;
+}
+#gobelet {
+	float: right;
+    padding-top: 4%;
+    margin-top: 84px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 20px solid rgba(255, 255, 255, 0.3);
+    border-top: none;
+    margin-right: 56px;
+    width: 38%;
+    height: 239px;
+}
+.ingredients {
+	width: 100%;
+	height: 0;
+}
+#Lait {
+	background-color: white;
+	margin-top: 198px;
+}
+#Eau {
+	background-color: lightblue;
+}
+#Chocolat {
+	background-color: rgb(117,86,56);
+}
+#Café {
+	background-color: rgb(47,29,15);
+}
+#Thé {
+	background-color: rgb(208, 240, 192);
+}
+#Sucre {
+	background-color: white;
+}
+/* fin gobelet */
+
+/* vue2 */
+.maintenance {
+	float: left;
+	height: 403px;
+	line-height: 344px;
+	width: 30%;
+	text-align: center;
+	vertical-align: middle;
+}
+.maintenance img {
+}
+#coinsCounter {
+	padding: 20px;
+	height: 226px;
+}
+.compteur {
+	height: 100%;
+	float: left;
+	width: 15%;
+	margin-left: 0.8%;
+	margin-right: 0.8%;
+	text-align: center;
+}
+.compteur img {
+	width: 100%;
+	margin-bottom: 13px;	
+}
+.displayCount, .displayIng {
+	background-image: url("../assets/ecranMonnaie.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 65px;
+	width: 100%;
+	line-height: 65px;
+	vertical-align: middle;
+	font-size: 2em;
+	color: red;
+	top: -68px;
+	text-shadow: 0 0 10px red;
+}
+#ingredientsCounter {
+	padding: 20px;
+	height: 395px;
+}
+.ingCompteur {
+	float: left;
+	border-radius: 500px;
+	border: 5px solid lightgrey;
+	height: 100%;
+	width: 10%;
+	margin-left: 7.5%;
+	margin-right: 7.5%;
+	text-align: center;
+}
+.compteurIngredients {
+	border-radius: 500px 500px 0 0;
+	height: 85%;
+	width: 100%;
+	border: 1px solid white;
+}
+.displayIng {
+	background-image: none;
+	height: 15%;
+	width: 100%;
+	font-size: 1.5em;
+	line-height: 36px;
+	border-radius: 0 0 500px 500px;
+	background: none;
+	border: 1px solid lightgrey;
+}
+#imgCafe {
+	margin-left: 10px;
+}
+#the {
+	background: linear-gradient(to right, rgb(208, 240, 192), rgb(165, 180, 140));
+}
+#chocolat {
+	background: linear-gradient(to right, rgb(117,86,56), rgb(80,60,35));
+}
+#lait {
+	background: linear-gradient(to right, rgb(254, 252, 255), rgb(170, 170, 170));
+}
+#cafe {
+	background: linear-gradient(to right, rgb(47,29,15), rgb(5, 2, 0));
+}
+/* fin vue 2 */

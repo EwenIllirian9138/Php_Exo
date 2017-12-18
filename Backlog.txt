@@ -1,0 +1,40 @@
+﻿Backlog
+
+Client	=> Choix boisson
+				selectDrink(drink, nbSucre)
+				resetDrink()
+				
+		=> Avoir un visuel des fonctions et machine a café
+	   			html, css, photoshop
+	   			led sucres, boissons
+	   			afficheur monnaie
+
+		=> Gerer mon sucre
+	   			écouter le click sur boutton (addSucre() removeSucre())
+
+	   	=> Ajouter des pieces
+	   			addCoins(coins)
+	   			2, 1, 0.50 ,0.20, 0.10, 0.05€
+
+	   	=> recuperer les monnaie
+	   			resetCoins()
+	   			rendu monnaie auto
+
+	   	=> Recuperer la boisson
+	   			visuel du gobelet
+	   			en fonction des recettes (couche de café, lait etc..)
+
+	   	=> Bonus : touillette si sucre
+
+Machine à café => Preparer la boisson
+						en fonction du choix user (boisson, sucre)
+
+				=> compter, gerer rendre la monnaie
+
+				=> Bonus : gerer les niveaux des ingrédients
+
+Maintenance => recuperer et recharger la monnaie
+			
+			=> Bonus : pouvoir rajouter des ingrédients
+
+

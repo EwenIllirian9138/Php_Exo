@@ -1,0 +1,235 @@
+<?php
+	function totalCoins($insert,$somtoto){
+		$totalToto = $insert + $somtoto;
+		return $totalToto;
+	}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Machine à café</title>
+	<meta author="Ilot3-JS">
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles/vueClient.css">
+	<link href='https://fonts.googleapis.com/css?family=Basic' rel='stylesheet'>
+
+	<!-- <script type="text/javascript" src="scripts/buttons.js"></script>
+	<script type="text/javascript" src="scripts/selectDrink.js"></script>
+	<script type="text/javascript" src="scripts/monnayeur.js"></script> -->
+</head>
+<body>
+
+	<?php
+	 echo "je suis là";
+	 $Boissons = array("Café","Cappucino","Chocalat","Thé");
+	 
+	 echo "<ul>".
+	 		"<li>".$Boissons[0]."</li>".
+	 		"<li>".$Boissons[1]."</li>".
+	 		"<li>".$Boissons[2]."</li>".
+	 		"<li>".$Boissons[3]."</li>".
+	 	"</ul>";
+	?>
+
+	<ul>
+	<?php
+	foreach ($Boissons as $TypeBoisson ) {
+		echo "<li>$TypeBoisson</li>";		
+	}
+	//unset($TypeBoisson);
+	?>
+	</ul>
+
+	<?php
+	echo totalCoins(8,9);
+	?>
+
+	<div id="machine">
+
+		<div id="moneyForm" class="hidden porteMonnaie">
+			<img class="coins porteMonnaie" src="assets/pieces/2euro.png" alt="0">
+			<img class="coins porteMonnaie" src="assets/pieces/1euro.png" alt="1">
+			<img class="coins porteMonnaie" src="assets/pieces/50cent.png" alt="2">
+			<img class="coins porteMonnaie" src="assets/pieces/20cent.png" alt="3">
+			<img class="coins porteMonnaie" src="assets/pieces/10cent.png" alt="4">
+			<img class="coins porteMonnaie" src="assets/pieces/5cent.png" alt="5">
+		</div>
+
+		<div id="afficheur">
+
+			<div id="gauche" >
+				<img id="btnGauche" class="buttons" src="assets/buttons/gaucheNormal.png" alt="Gauche">
+			</div>
+			
+			<div id="affichageChoix" class="text-center">
+
+				<div class="boissons">
+					<?php
+						echo "En attente ".date('d/m/Y H:i');
+					?>
+				</div>
+
+			</div>
+
+			<div id="droite">
+				<img id="btnDroite" class="buttons" src="assets/buttons/droiteNormal.png" alt="Droite">
+			</div>
+
+			<div id="chargement"></div>
+
+		</div>
+
+		<div id="monnayeur">
+
+			<div id="btnMoney" class="porteMonnaie">
+				<img class="porteMonnaie" src="assets/buttons/euroNormal.png" alt="euro">
+
+			</div>
+
+			<div id="fente">
+				<img src="assets/monnayeur/fente.png" alt="fente">
+			</div>
+			
+			<div id="btnResetMonnaie">
+				
+				<img class="buttons" src="assets/buttons/resetNormal.png" alt="reset">
+	
+			</div>
+
+			<div id="retourMonnaie">
+				<img src="assets/monnayeur/retourMonnaie.png" alt="monnaie">
+			</div>
+
+		</div>
+
+		<div id="btnValider">
+
+			<div id="afficheurMonnaie">
+				<p class="monnaie" id="monnaieUser">
+					<?php
+						$InsertCoins = 0;
+						echo $InsertCoins." Argent inserer";
+					?>
+				</p>
+				<img id="validation" src="assets/monnayeur/ecranMonnaie.png" alt="monnaie">
+			</div>
+
+			<img class="buttons" src="assets/buttons/validerNormal.png" alt="valider">
+		</div>
+
+		<div id="zoneSucre">
+			<div id="btnPlus">
+				<img class="buttons" src="assets/buttons/plusNormal.png" alt="plus">
+			</div>
+
+			<div id="ledSucres">
+				<img id="leds" src="assets/led3sucres.png" alt="ledSucre">
+			</div>
+			<div id="btnMoins">
+				<img class="buttons" src="assets/buttons/moinsNormal.png" alt="moins">
+			</div>
+		</div>
+
+		<div id="zoneGob">
+			<div id="gobelet">	
+
+				<div id="Lait" class="ingredients"></div>
+
+				<div id="Eau" class="ingredients"></div>
+
+				<div id="Thé" class="ingredients"></div>
+
+				<div id="Chocolat" class="ingredients"></div>
+
+				<div id="Café" class="ingredients"></div>
+
+
+				<div id="Sucre" class="ingredients"></div>
+			</div>
+		</div>
+
+		<div class="maintenance">
+			<img class="buttons" src="assets/buttons/adminNormal.png">
+		</div>
+
+	</div>
+
+	<div id="vue2">
+
+		<div id="coinsCounter">
+
+			<div id="2euro" class="compteur">
+				<img src="assets/pieces/2euro.png">
+				<p class="displayCount"></p>
+			</div>
+
+			<div id="1euro" class="compteur">
+				<img src="assets/pieces/1euro.png">
+				<p class="displayCount"></p>
+			</div>
+
+			<div id="50cent" class="compteur">
+				<img src="assets/pieces/50cent.png">
+				<p class="displayCount"></p>
+			</div>
+
+			<div id="20cent" class="compteur">
+				<img src="assets/pieces/20cent.png">
+				<p class="displayCount"></p>
+			</div>
+
+			<div id="10cent" class="compteur">
+				<img src="assets/pieces/10cent.png">
+				<p class="displayCount"></p>
+			</div>
+
+			<div id="5cent" class="compteur">
+				<img src="assets/pieces/5cent.png">
+				<p class="displayCount"></p>
+			</div>
+
+		</div>
+	
+		<div id="ingredientsCounter">
+
+			<div class="ingCompteur">
+				<div id='cafe' class="compteurIngredients"></div>
+				<p class="displayIng">Café</p>
+			</div>
+			
+			<div class="ingCompteur">
+				<div id='chocolat' class="compteurIngredients"></div>
+				<p class="displayIng">Choco</p>
+			</div>
+
+			<div class="ingCompteur">
+				<div id='lait' class="compteurIngredients"></div>
+				<p class="displayIng">Lait</p>	
+			</div>
+
+			<div class="ingCompteur">
+				<div id='the' class="compteurIngredients"></div>
+				<p class="displayIng">Thé</p>	
+			</div>
+
+		</div>
+
+		<div id="remplissage">
+			
+		</div>
+
+		<div class="maintenance">
+			<img class="buttons" src="assets/buttons/adminNormal.png">
+		</div>
+	</div>
+	
+
+	</div>
+</body>
+</html>
