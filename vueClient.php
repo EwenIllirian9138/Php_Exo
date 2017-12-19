@@ -6,9 +6,9 @@
 	<meta charset="utf-8">
 	<?php
 
-	if (isset($_POST['Boisson']) ){
+	/*if (isset($_POST['Boisson']) ){
 		echo '<META http-equiv= "refresh" content="4">';
-		}
+		}*/
 	?>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -32,7 +32,7 @@
 				<select class="form-control" id="sel1" name="Boisson">
 					<option>cafeLong</option>
 					<option>expresso</option>
-					<option>the</option>
+					<option>theLipt</option>
 				</select>
 			</div>
 			<div class="form-group">

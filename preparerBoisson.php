@@ -1,49 +1,37 @@
 <?php 
 $recupBoiss = $_POST['Boisson'];
+$recupSucre = intval($_POST['Sucres']);
+$listOfDrink = array(
+					"expresso" => array('cafe' => 1, 'eau' => 1, 'price' => 50),
+					"cafeLong" => array('cafe' => 2, 'eau' => 2, 'price' => 60),
+					"theLipt" => array('the' => 1, 'eau' => 1, 'price' => 40)
+					);
 
-$recupSucre = $_POST['Sucres'];
-$Eau = "dose Eau";
-$Cafe = "dose Café";
-$The = "dose thé";
+function prepareRecipies($selectBoisson){
+	global $listOfDrink;//déclaration global pour le tableau multi dimentionnel associatif
+	$gate ="";//declaration de variable pour la recette
+	$recette = $listOfDrink[$selectBoisson];
+	foreach ($recette as $key => $value) {
+		$gate .= $value." ".$key." ";
+	}
+	return $gate;
+}
 
-	function prepareBoisson($nomBoisson,$nbSucre){
-			switch($nomBoisson) {
-				case "expresso";
-					return expresso($nbSucre);
-				case "cafeLong";
-					return cafeLong($nbSucre);
-				case "the";
-					return the($nbSucre);
-				default;
-					return "aucune boisson selectionné.";
-			}
+//fonction d'affichage
+function prepareBoisson($selectBoisson,$nbSucre){ 
+	echo prepareRecipies($selectBoisson);
+	//test et affichage du nombre de sucre
+	if($nbSucre == 1){
+		echo 'avec '.$nbSucre.' sucre';
 	}
-	function expresso($nbSucre){
-			global $Eau;
-			global $Cafe;
-			$recette = "Expresso "."1 ".$Eau." 1 ".$Cafe;
-				if ($nbSucre != 0){
-					$recette = "Expresso "."1 ".$Eau." 1 ".$Cafe." ".$nbSucre." sucres";
-				}
-			return $recette;
+	else if ($nbSucre > 1){
+		echo 'avec '.$nbSucre.' sucres';
 	}
-	function cafeLong($nbSucre){
-			global $Eau;
-			global $Cafe;
-			$recette = "Cafe Long "."2 ".$Eau." 2 ".$Cafe;
-				if ($nbSucre != 0){
-				$recette = "Cafe Long "."2 ".$Eau." 2 ".$Cafe." ".$nbSucre." sucres";
-				}
-			return $recette;
+	else if($nbSucre == 0){
+		echo 'sans sucre';
 	}
-	function the($nbSucre){
-			global $Eau;
-			global $The;
-			$recette = "Thé "."1 ".$Eau." 1 ".$The;
-				if ($nbSucre != 0){
-				$recette = "Thé "."1 ".$Eau." 1 ".$The." ".$nbSucre." sucres";
-				}
-			return $recette;
-	}	
-echo prepareBoisson($recupBoiss,$recupSucre);
+}
+//fin fonction d'affichage
+prepareBoisson($recupBoiss,$recupSucre);
+
 ?>
