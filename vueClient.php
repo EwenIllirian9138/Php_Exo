@@ -1,16 +1,15 @@
-<?php
-	function totalCoins($insert,$somtoto){
-		$totalToto = $insert + $somtoto;
-		return $totalToto;
-	}
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Machine à café</title>
 	<meta author="Ilot3-JS">
 	<meta charset="utf-8">
+	<?php
+
+	if (isset($_POST['Boisson']) ){
+		echo '<META http-equiv= "refresh" content="4">';
+		}
+	?>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -24,32 +23,34 @@
 	<script type="text/javascript" src="scripts/monnayeur.js"></script> -->
 </head>
 <body>
-
-	<?php
-	 echo "je suis là";
-	 $Boissons = array("Café","Cappucino","Chocalat","Thé");
-	 
-	 echo "<ul>".
-	 		"<li>".$Boissons[0]."</li>".
-	 		"<li>".$Boissons[1]."</li>".
-	 		"<li>".$Boissons[2]."</li>".
-	 		"<li>".$Boissons[3]."</li>".
-	 	"</ul>";
-	?>
-
-	<ul>
-	<?php
-	foreach ($Boissons as $TypeBoisson ) {
-		echo "<li>$TypeBoisson</li>";		
-	}
-	//unset($TypeBoisson);
-	?>
-	</ul>
-
-	<?php
-	echo totalCoins(8,9);
-	?>
-
+	<!-- Exo PHP Etape 4 -->
+	<div class="container">
+		<h2>Commande</h2>
+		<form action="vueClient.php" method="post">
+			<div class="form-group">
+				<label for="sel1">Selection Boisson (select one):</label>
+				<select class="form-control" id="sel1" name="Boisson">
+					<option>cafeLong</option>
+					<option>expresso</option>
+					<option>the</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="sel1">Selection nombre de sucre (select one):</label>
+				<select class="form-control" id="sel1" name="Sucres">
+					<option>0</option>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select>
+			</div>
+			<button type="submit" class="btn btn-default">Submit</button>
+		</form>
+	</div>
+	<!-- Fin Exo PHP Etape 4 -->
+	
 	<div id="machine">
 
 		<div id="moneyForm" class="hidden porteMonnaie">
@@ -70,9 +71,16 @@
 			<div id="affichageChoix" class="text-center">
 
 				<div class="boissons">
+					
 					<?php
+					if (isset($_POST['Boisson']) ) {
+						include ('preparerBoisson.php');
+					}
+					else {
 						echo "En attente ".date('d/m/Y H:i');
+					}
 					?>
+
 				</div>
 
 			</div>
@@ -99,7 +107,7 @@
 			<div id="btnResetMonnaie">
 				
 				<img class="buttons" src="assets/buttons/resetNormal.png" alt="reset">
-	
+
 			</div>
 
 			<div id="retourMonnaie">
@@ -112,10 +120,6 @@
 
 			<div id="afficheurMonnaie">
 				<p class="monnaie" id="monnaieUser">
-					<?php
-						$InsertCoins = 0;
-						echo $InsertCoins." Argent inserer";
-					?>
 				</p>
 				<img id="validation" src="assets/monnayeur/ecranMonnaie.png" alt="monnaie">
 			</div>
@@ -195,7 +199,7 @@
 			</div>
 
 		</div>
-	
+
 		<div id="ingredientsCounter">
 
 			<div class="ingCompteur">
@@ -230,6 +234,6 @@
 	</div>
 	
 
-	</div>
+</div>
 </body>
 </html>
